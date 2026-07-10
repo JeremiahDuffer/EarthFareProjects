@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth Fare Artisanal Butcher Program — Articulate Course Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C8102E; --deepred:#9D2235; --green:#2C5234; --charcoal:#4D4D4F;
+  --beige:#EDE7DD; --beige-lt:#F7F5F2; --grey:#7C878E; --seafood:#005EB8;
+  --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Barlow',sans-serif;color:var(--charcoal);background:var(--beige-lt);font-size:15px;line-height:1.55}
+h1,h2,h3,h4,.disp{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--red);color:#fff;padding:52px 0 44px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border:22px solid rgba(255,255,255,.08);border-radius:50%}
+.hero .eyebrow{font-family:'Barlow Condensed';font-weight:600;letter-spacing:.22em;font-size:13px;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:56px;font-weight:800;line-height:.98;margin:10px 0 6px}
+.hero .tag{font-size:17px;max-width:640px;opacity:.95}
+.hero .tomato{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.tomato-icon{width:34px;height:34px;background:#fff;border-radius:50%;position:relative;display:inline-block}
+.tomato-icon:before{content:"";position:absolute;left:50%;top:-5px;transform:translateX(-50%) rotate(-18deg);width:14px;height:9px;background:var(--green);border-radius:0 8px 0 8px}
+.hero .brandname{font-family:'Barlow Condensed';font-weight:800;font-size:20px;letter-spacing:.14em}
+.badge-row{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.hero-badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);padding:6px 14px;border-radius:3px;font-family:'Barlow Condensed';font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:3px solid var(--red);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.navin{max-width:1040px;margin:0 auto;padding:0 24px;display:flex;gap:4px;overflow-x:auto}
+.navbtn{flex:0 0 auto;background:none;border:none;cursor:pointer;font-family:'Barlow Condensed';font-weight:700;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--charcoal);padding:14px 14px 11px;border-bottom:3px solid transparent;margin-bottom:-3px}
+.navbtn:hover{color:var(--red)}
+.navbtn.active{color:var(--red);border-bottom-color:var(--red)}
+.navbtn.sea.active{color:var(--seafood);border-bottom-color:var(--seafood)}
+.navbtn.sea:hover{color:var(--seafood)}
+
+/* ---------- SECTIONS ---------- */
+.view{display:none;padding:40px 0 64px}
+.view.active{display:block}
+.sechead{font-size:30px;font-weight:800;color:var(--charcoal)}
+.rule{width:48px;height:3px;background:var(--red);border-radius:2px;margin:8px 0 20px}
+.rule.g{background:var(--green)} .rule.b{background:var(--seafood)}
+
+/* course header card */
+.coursehead{background:#fff;border-left:6px solid var(--red);padding:26px 28px;margin-bottom:26px;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.coursehead.sea{border-left-color:var(--seafood)}
+.coursehead .cnum{font-family:'Barlow Condensed';font-weight:600;color:var(--grey);font-size:14px;letter-spacing:.2em;text-transform:uppercase}
+.coursehead h2{font-size:34px;font-weight:800;color:var(--red);margin:2px 0 6px}
+.coursehead.sea h2{color:var(--seafood)}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}
+.meta span{font-family:'Barlow Condensed';font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--beige);padding:5px 12px;border-radius:3px}
+.objectives{margin-top:16px;background:var(--beige-lt);border:1px solid var(--beige);padding:14px 18px}
+.objectives h4{font-size:14px;color:var(--green);letter-spacing:.12em;margin-bottom:6px}
+.objectives li{margin-left:18px;margin-bottom:3px;font-size:14px}
+
+/* Articulate block chip */
+.artic{display:inline-block;background:var(--charcoal);color:#fff;font-family:'Barlow Condensed';font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+
+/* content blocks */
+.block{background:#fff;padding:26px 28px;margin-bottom:22px;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.block h3{font-size:22px;font-weight:700;color:var(--charcoal);margin-bottom:4px}
+.block h3 .stdno{color:var(--red)}
+.block p{margin-bottom:10px;font-size:15px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.two{grid-template-columns:1fr}.hero h1{font-size:40px}}
+
+/* standard line (styled like a case sign) */
+.stdline{border:1.5px solid var(--charcoal);border-left:6px solid var(--red);background:#fff;padding:10px 14px;margin:8px 0;font-size:14px}
+.stdline b{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.05em;color:var(--red);font-weight:700}
+.stdline.sea{border-left-color:var(--seafood)} .stdline.sea b{color:var(--seafood)}
+.stdline.grn{border-left-color:var(--green)} .stdline.grn b{color:var(--green)}
+
+/* never/always split */
+.na{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+@media(max-width:640px){.na{grid-template-columns:1fr}}
+.nacol{border-radius:4px;overflow:hidden;border:1px solid #ddd}
+.nacol .head{font-family:'Barlow Condensed';font-weight:800;font-size:17px;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:9px 14px}
+.always .head{background:var(--green)} .never .head{background:var(--deepred)}
+.nacol ul{list-style:none;padding:12px 16px;background:#fff}
+.nacol li{padding:5px 0 5px 24px;position:relative;font-size:14px;border-bottom:1px dashed #eee}
+.nacol li:last-child{border-bottom:none}
+.always li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.never li:before{content:"✕";position:absolute;left:0;color:var(--deepred);font-weight:700}
+
+/* photo & video placeholders */
+.media{border:2px dashed var(--grey);background:var(--beige-lt);border-radius:4px;padding:22px;text-align:center;margin:14px 0}
+.media .icon{font-size:30px;display:block;margin-bottom:6px}
+.media .label{font-family:'Barlow Condensed';font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal)}
+.media .note{font-size:13px;color:var(--grey);max-width:560px;margin:6px auto 0}
+.media.video{border-color:var(--red);background:#fdf5f6}
+.media.video .label{color:var(--red)}
+
+/* quote */
+.quote{border-left:4px solid var(--red);background:var(--beige);padding:18px 22px;margin:18px 0}
+.quote p{font-family:'Barlow Condensed';font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:.03em;color:var(--charcoal);line-height:1.25;margin:0}
+.quote .who{font-family:'Barlow';font-weight:500;font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);margin-top:8px}
+
+/* stat blocks */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:16px 0}
+.stat{color:#fff;padding:16px 14px;border-radius:4px;text-align:center}
+.stat .n{font-family:'Barlow Condensed';font-weight:800;font-size:34px;line-height:1}
+.stat .l{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;opacity:.8;margin-top:5px}
+.stat.red{background:var(--red)} .stat.grn{background:var(--green)} .stat.chr{background:var(--charcoal)} .stat.sea{background:var(--seafood)}
+
+/* NEW best-practice badge */
+.newbp{display:inline-block;background:var(--green);color:#fff;font-family:'Barlow Condensed';font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-left:8px;vertical-align:middle}
+
+/* quiz */
+.quiz{background:var(--charcoal);color:#fff;padding:26px 28px;margin-bottom:22px;border-radius:4px}
+.quiz h3{color:#fff;font-size:22px;margin-bottom:2px}
+.quiz .sub{font-size:13px;opacity:.75;margin-bottom:16px}
+.q{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:16px 18px;margin-bottom:14px}
+.q .qt{font-weight:700;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;padding:9px 14px;margin-bottom:7px;border-radius:3px;cursor:pointer;font-family:'Barlow';font-size:14px}
+.opt:hover{background:rgba(255,255,255,.2)}
+.opt.correct{background:var(--green);border-color:var(--green)}
+.opt.wrong{background:var(--deepred);border-color:var(--deepred)}
+.fb{display:none;font-size:13.5px;margin-top:8px;padding:9px 12px;border-radius:3px}
+.fb.show{display:block}
+.fb.good{background:rgba(44,82,52,.35);border-left:3px solid #7fc48f}
+.fb.bad{background:rgba(157,34,53,.35);border-left:3px solid #e8899a}
+
+/* curriculum map */
+.trackcard{background:#fff;border-top:5px solid var(--red);box-shadow:0 1px 4px rgba(0,0,0,.06);padding:20px 22px}
+.trackcard.g{border-top-color:var(--green)} .trackcard.b{border-top-color:var(--seafood)} .trackcard.c{border-top-color:var(--charcoal)}
+.trackgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:8px}
+.trackcard h3{font-size:19px;margin-bottom:2px}
+.trackcard .for{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);margin-bottom:10px}
+.tclist{list-style:none}
+.tclist li{padding:7px 0;border-bottom:1px dashed var(--beige);font-size:14px;display:flex;gap:8px;align-items:baseline}
+.tclist li:last-child{border-bottom:none}
+.tclist .cn{font-family:'Barlow Condensed';font-weight:800;color:var(--red);flex:0 0 34px}
+.trackcard.b .cn{color:var(--seafood)} .trackcard.c .cn{color:var(--charcoal)} .trackcard.g .cn{color:var(--green)}
+.dur{margin-left:auto;font-size:11px;color:var(--grey);white-space:nowrap}
+
+/* speed rack + diagrams */
+.rackwrap{max-width:420px;margin:16px auto}
+.rackshelf{border:2px solid var(--charcoal);border-radius:4px;padding:10px 14px;margin-bottom:6px;text-align:center;font-family:'Barlow Condensed';font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;background:#fff;position:relative}
+.rackshelf .pos{position:absolute;left:-84px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--grey);letter-spacing:.1em;width:70px;text-align:right;font-family:'Barlow'}
+@media(max-width:600px){.rackshelf .pos{display:none}}
+.rackshelf.top{background:var(--green);color:#fff;border-color:var(--green)}
+.rackshelf.mid{background:var(--beige)}
+.rackshelf.bot{background:var(--deepred);color:#fff;border-color:var(--deepred)}
+.rackcap{text-align:center;font-size:12.5px;color:var(--grey);margin-top:8px}
+
+/* fat content bars */
+.fatrow{margin:12px 0}
+.fatrow .nm{font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:15px;margin-bottom:4px;display:flex;justify-content:space-between}
+.bar{height:26px;border-radius:3px;overflow:hidden;display:flex;border:1px solid #ccc}
+.lean{background:var(--deepred)} .fat{background:var(--beige);border-left:2px solid #fff}
+.bar span{color:#fff;font-family:'Barlow Condensed';font-weight:700;font-size:13px;display:flex;align-items:center;padding-left:10px}
+.bar .fat span{color:var(--charcoal)}
+
+/* sequence flow */
+.flow{display:flex;gap:0;align-items:stretch;margin:16px 0;flex-wrap:wrap}
+.fstep{flex:1 1 160px;background:#fff;border:2px solid var(--seafood);border-radius:4px;padding:14px;text-align:center;position:relative;margin-right:26px;min-width:150px}
+.fstep:last-child{margin-right:0}
+.fstep:not(:last-child):after{content:"→";position:absolute;right:-22px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--seafood);font-weight:700}
+.fstep .n{font-family:'Barlow Condensed';font-weight:800;font-size:26px;color:var(--seafood)}
+.fstep .t{font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;font-size:15px}
+.fstep .d{font-size:12px;color:var(--grey);margin-top:4px}
+.fstep.sanitize{border-style:dashed;border-color:var(--green)}
+.fstep.sanitize .n,.fstep.sanitize:after{color:var(--green)}
+
+/* timeline */
+.tl{border-left:3px solid var(--red);margin:16px 0 8px 8px;padding-left:22px}
+.tl .ev{position:relative;padding-bottom:16px}
+.tl .ev:before{content:"";position:absolute;left:-29px;top:4px;width:11px;height:11px;background:var(--red);border-radius:50%}
+.tl .tm{font-family:'Barlow Condensed';font-weight:800;font-size:17px;color:var(--red);text-transform:uppercase}
+.tl .ev p{font-size:14px;margin:0}
+.tl.blue{border-left-color:var(--seafood)} .tl.blue .ev:before{background:var(--seafood)} .tl.blue .tm{color:var(--seafood)}
+.tl.grn{border-left-color:var(--green)} .tl.grn .ev:before{background:var(--green)} .tl.grn .tm{color:var(--green)}
+
+/* steak spec card */
+.steak{border:1px solid var(--beige);border-radius:4px;overflow:hidden;background:#fff}
+.steak .sh{background:var(--red);color:#fff;padding:8px 14px;font-family:'Barlow Condensed';font-weight:800;font-size:17px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.steak .sh .thick{background:#fff;color:var(--red);padding:2px 8px;border-radius:2px;font-size:14px}
+.steak ul{list-style:none;padding:12px 16px}
+.steak li{font-size:13.5px;padding:4px 0 4px 20px;position:relative;border-bottom:1px dashed #eee}
+.steak li:last-child{border-bottom:none}
+.steak li:before{content:"›";position:absolute;left:4px;color:var(--red);font-weight:800}
+.steakgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+@media(max-width:640px){.steakgrid{grid-template-columns:1fr}}
+
+/* generic table */
+table.eft{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;font-size:13.5px}
+table.eft th{background:var(--charcoal);color:#fff;font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;text-align:left;font-size:13px}
+table.eft td{padding:8px 12px;border-bottom:1px solid var(--beige)}
+table.eft tr:nth-child(even) td{background:var(--beige-lt)}
+table.eft.blue th{background:var(--seafood)}
+
+/* footer */
+footer{background:var(--green);color:#fff;padding:26px 0;margin-top:20px}
+footer .fin{max-width:1040px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
+footer .bn{font-family:'Barlow Condensed';font-weight:800;letter-spacing:.14em;font-size:18px;text-transform:uppercase}
+footer .tg{font-size:13px;opacity:.85}
+
+/* completion banner */
+.donecard{background:var(--green);color:#fff;padding:22px 26px;border-radius:4px;display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.donecard .ck{font-size:34px}
+.donecard h3{color:#fff;font-size:21px}
+.donecard p{font-size:14px;opacity:.9;margin:0}
+
+.smallnote{font-size:12.5px;color:var(--grey);font-style:normal}
+.pill{display:inline-block;background:var(--beige);padding:2px 9px;border-radius:10px;font-size:12px;font-family:'Barlow Condensed';font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:2px 3px 2px 0}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="tomato"><span class="tomato-icon"></span><span class="brandname">EARTH FARE</span></div>
+    <div class="eyebrow">Meat &amp; Seafood Learning &amp; Development</div>
+    <h1>The Artisanal<br>Butcher Program</h1>
+    <p class="tag">A hands-on training academy for Meat &amp; Seafood Team Members — built from our own standards, our own experts, and the craft of the neighborhood butcher shop. Healthy food for everyone starts with the freshest case in town.</p>
+    <div class="badge-row">
+      <span class="hero-badge">9 Courses · 15–20 min each</span>
+      <span class="hero-badge">3 Role Tracks + Leadership</span>
+      <span class="hero-badge">Pairs with OJT &amp; Sign-Off</span>
+    </div>
+  </div>
+</div>
+
+<nav><div class="navin">
+  <button class="navbtn active" data-v="home">Program Home</button>
+  <button class="navbtn" data-v="f1">F1 · Food Safety</button>
+  <button class="navbtn" data-v="f2">F2 · Fresh Case</button>
+  <button class="navbtn" data-v="m1">M1 · Grind 101</button>
+  <button class="navbtn" data-v="m2">M2 · Top 4 Steaks</button>
+  <button class="navbtn" data-v="m3">M3 · Equipment</button>
+  <button class="navbtn" data-v="m4">M4 · Value Added</button>
+  <button class="navbtn sea" data-v="s1">S1 · Seafood I</button>
+  <button class="navbtn sea" data-v="s2">S2 · Seafood II</button>
+  <button class="navbtn" data-v="l1">L1 · Leadership</button>
+  <button class="navbtn" data-v="build">Build Notes</button>
+</div></nav>
+
+<!-- ================= PROGRAM HOME ================= -->
+<section class="view active" id="v-home"><div class="wrap">
+  <h2 class="sechead">Program Overview</h2>
+  <div class="rule"></div>
+  <p style="max-width:760px">This program turns the SME Content Discovery Workbook (Nick Budlong, Fresh Category) and the Meat &amp; Seafood Minimum Standards into a modern eLearning curriculum. Each course is 15–20 minutes, ends with a scored knowledge check, and connects directly to an OJT activity and the Competency Observation Checklist. eLearning teaches the <b>why and the what</b> — the floor teaches the <b>how</b>. Items marked <span class="newbp" style="margin-left:0">⊕ Added Best Practice</span> are new recommendations layered on top of our existing standards, drawn from industry butcher apprenticeship models.</p>
+
+  <div class="stats">
+    <div class="stat red"><div class="n">9</div><div class="l">Courses</div></div>
+    <div class="stat chr"><div class="n">~2.5</div><div class="l">Hours total seat time</div></div>
+    <div class="stat grn"><div class="n">100%</div><div class="l">Mapped to observation checklist</div></div>
+    <div class="stat red"><div class="n">⚠</div><div class="l">Safety items gate independent work</div></div>
+  </div>
+
+  <h2 class="sechead" style="margin-top:34px">Curriculum Map</h2>
+  <div class="rule"></div>
+  <div class="trackgrid">
+    <div class="trackcard">
+      <h3>Foundations Track</h3>
+      <div class="for">All roles · Complete first · Day 1–Week 2</div>
+      <ul class="tclist">
+        <li><span class="cn">F1</span> Welcome to the Block: Food Safety First <span class="dur">18 min</span></li>
+        <li><span class="cn">F2</span> The Fresh Case: Set It Like a Pro <span class="dur">20 min</span></li>
+      </ul>
+    </div>
+    <div class="trackcard">
+      <h3>Meat Cutter Track</h3>
+      <div class="for">Meat Cutters · APTL/TL · After F1–F2</div>
+      <ul class="tclist">
+        <li><span class="cn">M1</span> Grind 101: Fresh Ground Beef <span class="dur">18 min</span></li>
+        <li><span class="cn">M2</span> The Cutter's Craft: Top 4 Steaks <span class="dur">20 min</span></li>
+        <li><span class="cn">M3</span> Equipment Mastery &amp; Safety <span class="dur">20 min</span></li>
+        <li><span class="cn">M4</span> Value Added &amp; Handmade Sausage <span class="dur">15 min</span></li>
+      </ul>
+    </div>
+    <div class="trackcard b">
+      <h3>Seafood Track</h3>
+      <div class="for">Seafood Leads · APTL/TL · After F1–F2</div>
+      <ul class="tclist">
+        <li><span class="cn">S1</span> Seafood Excellence I: The Case &amp; Fresh Fish <span class="dur">18 min</span></li>
+        <li><span class="cn">S2</span> Seafood Excellence II: Shellfish &amp; Compliance <span class="dur">15 min</span></li>
+      </ul>
+    </div>
+    <div class="trackcard c">
+      <h3>Leadership Track</h3>
+      <div class="for">Assistant Team Leaders · Team Leaders</div>
+      <ul class="tclist">
+        <li><span class="cn">L1</span> Production Discipline: Reports, Shrink &amp; KWYT <span class="dur">15 min</span></li>
+        <li><span class="cn">✦</span> Capstone: Artisanal Butcher Certification (OJT + cutting exam) <span class="dur">On floor</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"A butcher shop isn't a place — it's a standard. Our customers should feel it the second they see the case."</p>
+    <div class="who">Program theme · use as opening quote slide in every course</div>
+  </div>
+
+  <div class="block">
+    <h3>How the courses fit the learner journey</h3>
+    <table class="eft">
+      <tr><th>Phase</th><th>eLearning</th><th>On the floor (OJT)</th><th>Verified by</th></tr>
+      <tr><td>Day 1–2</td><td>F1 Food Safety First</td><td>Safety orientation · glove/sanitizer return demo · temp checks</td><td>Sign-off + safety quiz</td></tr>
+      <tr><td>Week 1–2</td><td>F2 The Fresh Case</td><td>Retray with buddy · wrapping demo (5 in a row) · signage practice</td><td>Observation checklist</td></tr>
+      <tr><td>Week 2–5</td><td>M1–M4 (Cutter) or S1–S2 (Seafood)</td><td>Equipment safety sign-offs · guided cutting · case set-ups</td><td>Return demos, zero safety deviations</td></tr>
+      <tr><td>Week 4+</td><td>L1 (leads)</td><td>Independent shift observed</td><td>Tab 8 Observation Checklist</td></tr>
+      <tr><td>Certification</td><td>All courses ≥80%</td><td>Cutting exam · sanitation audit · customer interaction exercise <span class="newbp">⊕ Added</span></td><td>TL + Store Team Leader sign-off</td></tr>
+    </table>
+    <p class="smallnote">⊕ The three-part certification (cutting exam, sanitation audit, customer service exercise) mirrors how leading grocery butcher apprenticeships assess readiness — it gives "Artisanal Butcher" a credential feel team members can be proud of.</p>
+  </div>
+</div></section>
+
+<!-- ================= COURSE F1 ================= -->
+<section class="view" id="v-f1"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Foundations Track · Course F1</div>
+    <h2>Welcome to the Block: Food Safety First</h2>
+    <p>Every great butcher shop is built on one non-negotiable foundation: nothing we do is worth making a customer sick. This course covers the food safety rules that apply to every role, every shift, every day.</p>
+    <div class="meta"><span>⏱ 18 minutes</span><span>👥 All Roles</span><span>⚠ Safety-Gated</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Apply the two glove-change triggers (species and customer) without prompting</li>
+        <li>Stack a speed rack in the correct food safety order — every time</li>
+        <li>Mix and test sanitizer to 200–400ppm and follow the 2-hour change schedule</li>
+        <li>Verify product temperatures by category using a calibrated thermometer</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Hero image + statement block</span>
+    <div class="media video">
+      <span class="icon">🎬</span>
+      <span class="label">Opening video · 60–90 sec</span>
+      <p class="note">Team Leader on camera at the case: "Welcome to Meat &amp; Seafood. Before you touch a knife, a pan, or a package, you learn how we keep food safe. It's the first skill of the trade — and it's non-negotiable." Cut to b-roll: glove change, sanitizer test strip, speed rack.</p>
+    </div>
+    <div class="quote">
+      <p>"Food safety only counts if it happens when nobody's watching."</p>
+      <div class="who">M&amp;S Team Leader expectation · from SME workbook, Tab 2</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Labeled graphic (click each shelf)</span>
+    <h3>Lesson 1 · The Speed Rack Rule</h3>
+    <p>Cross-contamination prevention starts with gravity: anything that can drip must never be above something it could contaminate. Learn this stacking order until it's automatic.</p>
+    <div class="rackwrap">
+      <div class="rackshelf top"><span class="pos">Top shelf</span>Cooked / Ready-to-Eat Seafood</div>
+      <div class="rackshelf mid"><span class="pos">Middle</span>Red Meat (Beef · Pork · Lamb · Bison)</div>
+      <div class="rackshelf bot"><span class="pos">Always bottom</span>Chicken &amp; Poultry — NEVER above red meat</div>
+      <div class="rackcap">Meat and seafood are NEVER stacked on the same speed rack — designate and clearly mark racks by department. Shellfish always stacks below all other seafood.</div>
+    </div>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">Shoot a correctly stacked meat rack and a correctly stacked seafood rack side by side in the cooler, with covers on. Use for the labeled-graphic hotspots.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Flashcard grid</span>
+    <h3>Lesson 2 · Gloves: Two Triggers, Zero Exceptions</h3>
+    <p>There are exactly two events that require a glove change — and they're separate triggers. If either one happens, the gloves come off.</p>
+    <div class="two">
+      <div class="stdline"><b>Trigger 1 — Species:</b> Change gloves every time you switch between species. Beef to chicken? Change. Pork to fish? Change.</div>
+      <div class="stdline"><b>Trigger 2 — Customer:</b> Change gloves between every customer interaction when handling product.</div>
+    </div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Wash first:</b> Gloves are not a substitute for clean hands. Wash hands before gloving up at the start of a task, after breaks, and any time gloves come off. Gloves over dirty hands just contaminate slower.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Interactive slider or process block</span>
+    <h3>Lesson 3 · Sanitizer: 200–400ppm, Every 2 Hours</h3>
+    <div class="two">
+      <div>
+        <p>Sanitizer solution protects customers — but only at the right concentration. Too weak, it doesn't kill pathogens. Too strong, it contaminates food-contact surfaces.</p>
+        <div class="stdline"><b>Standard:</b> Mix to 200–400ppm. Verify with test strips — never eyeball it.</div>
+        <div class="stdline"><b>Standard:</b> Change sanitizer buckets every 2 hours during continuous use.</div>
+        <div class="stdline"><b>Standard:</b> Spray-rag method only. NEVER spray a surface directly — spray the rag, then clean and sanitize the surface. This prevents aerosolizing chicken residue (salmonella risk).</div>
+      </div>
+      <div>
+        <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">Close-up of a test strip against the color chart at correct concentration; second photo of sanitizer bucket with a "changed at" time card.</p></div>
+        <div class="media video"><span class="icon">🎬</span><span class="label">Micro-demo · 30 sec</span><p class="note">Hands-only video: mix, dip strip, read, log. End frame: "Test strips on hand at all times."</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Knowledge check (inline)</span>
+    <h3>Lesson 4 · Temperature Targets by Category</h3>
+    <table class="eft">
+      <tr><th>Category</th><th>Target</th><th>How you verify</th></tr>
+      <tr><td>Fresh poultry</td><td><b>33–36°F at all times</b></td><td>Thermometer check; skin-on poultry topped with a thin layer of ice</td></tr>
+      <tr><td>Grab &amp; Go cases</td><td><b>40°F or below</b></td><td>Case thermometer + defrost cycle posted on case</td></tr>
+      <tr><td>Ice tables</td><td><b>40°F or below</b></td><td>Product fully submerged/covered in ice; checked every 2 hours</td></tr>
+      <tr><td>Steamed shrimp (before display)</td><td><b>Cooled to ≤40°F</b></td><td>Temp before it goes in the Seafood Grab &amp; Go</td></tr>
+    </table>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Calibrate weekly:</b> Verify thermometer accuracy with the ice-point method (crushed ice + water = 32°F) once a week and after any drop. A thermometer that lies is worse than no thermometer.<span class="newbp">⊕ Added</span></div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Know the Danger Zone:</b> Bacteria multiply fastest between 41°F and 135°F. Every standard in this course exists to keep product out of that zone. Teach the why, not just the number.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course F1</h3>
+    <div class="sub">Answer all questions. In Articulate, build as a graded Quiz block — 80% pass, unlimited retries with remediation.</div>
+    <div class="q"><div class="qt">1. You just finished wrapping pork chops and a customer asks for two chicken breasts. What do you do first?</div>
+      <button class="opt" data-r="w">Grab the chicken — the customer is waiting</button>
+      <button class="opt" data-r="c">Change gloves — switching species AND starting a customer interaction are both triggers</button>
+      <button class="opt" data-r="w">Wipe gloves on a sanitizer rag and continue</button>
+      <div class="fb good">Correct. Two triggers fired at once — species change and customer interaction. Gloves come off every time.</div>
+      <div class="fb bad">Not quite. Species change and customer interaction each require a fresh pair of gloves — no shortcuts, even when it's busy.</div>
+    </div>
+    <div class="q"><div class="qt">2. Where does chicken go on a speed rack?</div>
+      <button class="opt" data-r="w">Top shelf, so it's easy to reach</button>
+      <button class="opt" data-r="w">Anywhere, as long as it's covered</button>
+      <button class="opt" data-r="c">Always the bottom — never above red meat, and never on a seafood rack</button>
+      <div class="fb good">Right. Drips travel down. Poultry lives on the bottom, and meat and seafood never share a rack.</div>
+      <div class="fb bad">Remember the gravity rule — anything that can drip must never sit above what it could contaminate. Chicken is always on the bottom.</div>
+    </div>
+    <div class="q"><div class="qt">3. Your sanitizer bucket was mixed 3 hours ago and the test strip reads in range. What's the call?</div>
+      <button class="opt" data-r="w">Keep using it — the strip says it's fine</button>
+      <button class="opt" data-r="c">Change it — buckets are changed every 2 hours during continuous use, period</button>
+      <div class="fb good">Correct. The 2-hour schedule is the standard even if the strip reads in range — solution loads up with soil you can't see.</div>
+      <div class="fb bad">The 2-hour change schedule holds even when the strip reads in range — the solution accumulates soil that reduces effectiveness.</div>
+    </div>
+    <div class="q"><div class="qt">4. Fresh poultry must be kept between:</div>
+      <button class="opt" data-r="c">33°F and 36°F at all times</button>
+      <button class="opt" data-r="w">38°F and 41°F</button>
+      <button class="opt" data-r="w">Below 45°F</button>
+      <div class="fb good">Correct — 33–36°F at all times, with a thin layer of ice on all skin-on poultry.</div>
+      <div class="fb bad">Poultry runs colder than the rest of the case: 33–36°F at all times.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: sanitizer return demo, glove protocol observation, and temperature check walk with your Team Leader or Assistant Team Leader (Day 1–2). You cannot work independently until all ⚠ safety items are signed off.</p></div></div>
+</div></section>
+
+<!-- ================= COURSE F2 ================= -->
+<section class="view" id="v-f2"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Foundations Track · Course F2</div>
+    <h2>The Fresh Case: Set It Like a Pro</h2>
+    <p>The fresh case is our storefront, our reputation, and our craft on display. This course covers the daily retray, presentation standards, wrapping the EF way, and the signage that ties it all together.</p>
+    <div class="meta"><span>⏱ 20 minutes</span><span>👥 All Roles</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Execute the 8-step daily retray, including the freshness inspection</li>
+        <li>Apply layer limits and presentation standards by category</li>
+        <li>Wrap product the EF way: tight, clean surface, correct PLU and date</li>
+        <li>Produce a compliant case sign with correct P-Touch sizing and COOL labeling</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Process block (8 steps)</span>
+    <h3>Lesson 1 · The Daily Retray — 8 Steps, Every Day</h3>
+    <table class="eft">
+      <tr><th>#</th><th>Step</th><th>Why it matters</th></tr>
+      <tr><td>1</td><td>Review the case layout before touching product</td><td>Prevents rework — set to the planogram from the start</td></tr>
+      <tr><td>2</td><td>Work one section at a time</td><td>Keeps temps controlled; prevents mix-ups</td></tr>
+      <tr><td>3</td><td>⚠ Inspect every item — pull substandard product to KWYT</td><td>The freshness check happens here, not later</td></tr>
+      <tr><td>4</td><td>⚠ Clean tray + NEW black steak paper — never reuse</td><td>New paper daily is the EF standard</td></tr>
+      <tr><td>5</td><td>⚠ Species dividers between beef / pork / poultry / lamb</td><td>Cross-contamination prevention — regulatory</td></tr>
+      <tr><td>6</td><td>Set to the display standard — layers, facing, presentation</td><td>Presentation drives customer confidence and sales</td></tr>
+      <tr><td>7</td><td>Correct case sign — P-Touch price, COOL verified from invoice</td><td>Accurate signage every day</td></tr>
+      <tr><td>8</td><td>At close: dollies, liner cover, into the meat cooler</td><td>Overnight temperature and contamination protection</td></tr>
+    </table>
+    <div class="media video"><span class="icon">🎬</span><span class="label">Video · 3 min · "One Section, Start to Finish"</span><p class="note">Follow one team member retraying the steak section in real time with step captions. This becomes the reference video for the Week 1 OJT retray observation.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Accordion by category</span>
+    <h3>Lesson 2 · Presentation Standards by Category</h3>
+    <table class="eft">
+      <tr><th>Category</th><th>Layers</th><th>Key standards</th></tr>
+      <tr><td>Steaks</td><td>Min 1 / Max 2</td><td>Ad steaks on full pans; regular retail on half pans; bone dust removed; 6" pans (sirloin &amp; porterhouse on 8")</td></tr>
+      <tr><td>Roasts</td><td>Max 1</td><td>Never overwrapped in film; converted after one day to grinds, cube steak, or stew; sizes 1.75–3 lb</td></tr>
+      <tr><td>Pork</td><td>Min 1 / Max 2</td><td>Steak paper between layers; center-cut chops show tenderloin; thick 1.25" / thin .75"</td></tr>
+      <tr><td>Poultry</td><td>Min 1</td><td>All parts facing same direction; skin-on topped with ice; whole birds standing, leaning back, wings tucked</td></tr>
+      <tr><td>Bacon &amp; sausage</td><td>8" pan</td><td>Leanest bacon facing customer; sausage bend "smiling" toward the customer</td></tr>
+    </table>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo set needed (10–12 shots)</span><p class="note">One hero shot per category at standard, plus 2–3 "spot the miss" photos (hole in display, 3 layers, missing divider) for the sorting activity below.</p></div>
+    <div class="stdline"><b>Activity:</b> Build a drag-and-drop "Case Ready / Not Ready" sorting activity in Articulate using the photo set — learners sort 8 photos and get feedback on each.</div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Step interaction + video</span>
+    <h3>Lesson 3 · Wrapped the EF Way</h3>
+    <div class="two">
+      <div>
+        <div class="stdline"><b>Standard:</b> Tight wrap in EF freezer paper — neat and tidy is part of the brand.</div>
+        <div class="stdline"><b>Standard:</b> Wrap only on a clean, sanitized surface with no cross-contamination risk.</div>
+        <div class="stdline"><b>Standard:</b> Correct PLU and correct sell-by date on every package.</div>
+        <div class="stdline"><b>Standard:</b> Know what goes in paper vs. plastic bags — steaks are never wrapped touching each other without paper between.</div>
+      </div>
+      <div>
+        <div class="media video"><span class="icon">🎬</span><span class="label">Video · 90 sec · "The EF Wrap"</span><p class="note">Overhead hands-only shot, butcher-block surface: paper positioning, the fold sequence, tight tuck, label placement. Slow-motion replay of the fold. This is the signature craft moment of the course.</p></div>
+      </div>
+    </div>
+    <div class="quote"><p>"A tight, clean wrap tells the customer everything about what happened behind the counter."</p><div class="who">Attribute to look for: attention to detail in wrapping — SME workbook</div></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Labeled graphic of a case sign</span>
+    <h3>Lesson 4 · Signage &amp; COOL Labeling</h3>
+    <div class="na">
+      <div class="nacol always"><div class="head">Always</div><ul>
+        <li>Clear P-Touch tape only</li>
+        <li>Price in LARGE P-Touch; COOL in SMALL</li>
+        <li>Unit of measure in caps, no period (LB, EA)</li>
+        <li>4" holder front of case · 3" holder back of pans</li>
+        <li>COOL verified against the invoice daily</li>
+        <li>Sale signs checked daily — on-sale signed, off-sale removed</li>
+      </ul></div>
+      <div class="nacol never"><div class="head">Never</div><ul>
+        <li>White tape — ever</li>
+        <li>$ symbol on case signs</li>
+        <li>Chipped, crooked, or dirty signs</li>
+        <li>COOL missing on raw fresh/frozen product</li>
+        <li>Guessing origin — it comes from the invoice</li>
+      </ul></div>
+    </div>
+    <p class="smallnote">COOL (Country of Origin Labeling) is required for all raw fresh or previously frozen fish/shellfish and applicable meat — but NOT for processed items (cooked, cured, smoked, restructured, or combined foods like Tilapia Parmesan). That distinction is the most common confusion point — build a true/false drill on it.</p>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Scenario block</span>
+    <h3>Lesson 5 · FIFO &amp; the 10AM Readiness Standard <span class="newbp">⊕ Enhanced</span></h3>
+    <p>Every section — steaks, ground beef, roasts, pork, poultry, sausage &amp; bacon, value added, seafood — is fully set by <b>10:00AM</b>. FIFO applies everywhere: fresh case, grab &amp; go, and freezer. Older product in front, newer behind, date codes checked on every restock.</p>
+    <div class="stdline grn"><b>⊕ Added Best Practice — "Look twice" rule:</b> Check the date when you pick the package up AND when you set it down. Two glances catch what one misses — this single habit is the cheapest shrink-prevention tool we have.<span class="newbp">⊕ Added</span></div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — First hour / last hour walk:</b> A 5-minute case walk in the first hour (holes, signage, temps) and last hour (overnight prep started, short-dated flagged) keeps standards from drifting mid-shift.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course F2</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass.</div>
+    <div class="q"><div class="qt">1. Yesterday's steak paper looks perfectly clean. Can you reuse it under today's product?</div>
+      <button class="opt" data-r="w">Yes, if it passes a visual inspection</button>
+      <button class="opt" data-r="c">No — clean tray and NEW black steak paper every day is the standard</button>
+      <div class="fb good">Correct. New paper daily, no exceptions — "it looks clean" is not the standard.</div>
+      <div class="fb bad">Reusing steak paper is a standards violation even if it looks clean. New paper, every day.</div>
+    </div>
+    <div class="q"><div class="qt">2. How many layers of roasts can be displayed?</div>
+      <button class="opt" data-r="w">Two, like steaks</button>
+      <button class="opt" data-r="c">One — maximum, with no visible holes</button>
+      <button class="opt" data-r="w">As many as fit</button>
+      <div class="fb good">Right — roasts max out at one layer, and they convert to grinds, cube steaks, or stew beef after one day.</div>
+      <div class="fb bad">Roasts are the exception: one layer maximum. Steaks and pork can go to two.</div>
+    </div>
+    <div class="q"><div class="qt">3. Which sign is correct for the fresh case?</div>
+      <button class="opt" data-r="w">"$5.99 lb." — white tape</button>
+      <button class="opt" data-r="c">"5.99 LB" — clear tape, large P-Touch price, small P-Touch COOL</button>
+      <div class="fb good">Correct — no $ symbol, caps with no period, clear tape only, and correct P-Touch sizing.</div>
+      <div class="fb bad">Two misses there: the $ symbol never appears on case signs, and white tape is never used.</div>
+    </div>
+    <div class="q"><div class="qt">4. COOL labeling is NOT required for which item?</div>
+      <button class="opt" data-r="w">Raw Scottish salmon fillet</button>
+      <button class="opt" data-r="c">Tilapia Parmesan (combined with other foods)</button>
+      <button class="opt" data-r="w">Previously frozen raw shrimp</button>
+      <div class="fb good">Correct — processed or combined seafood is exempt. Raw fresh or previously frozen product always requires COOL.</div>
+      <div class="fb bad">Raw product always needs COOL. The exemption is for processed items — cooked, cured, smoked, restructured, or combined foods.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: full retray with your buddy, wrapping return demo (5 consecutive correct wraps), and observed sign production. Clerk track continues to independent practice in Weeks 3–4.</p></div></div>
+</div></section>
+
+<!-- ================= COURSE M1 ================= -->
+<section class="view" id="v-m1"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Meat Cutter Track · Course M1</div>
+    <h2>Grind 101: Fresh Ground Beef</h2>
+    <p>At Earth Fare we take pride in offering the freshest, safest, best-tasting ground beef available — ground fresh from real primals, multiple times a day, and never re-ground. This is our flagship program. Learn it cold.</p>
+    <div class="meta"><span>⏱ 18 minutes</span><span>👥 Meat Cutter · APTL · TL</span><span>⚠ Compliance: FRESH TRAX</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>State the fat/lean range for Chuck, Round, and Sirloin grinds and their approved source cuts</li>
+        <li>Follow the daily grind schedule: thirds, PM small batches, and the 8:30AM rule</li>
+        <li>Log every batch in FRESH TRAX at the time of grinding</li>
+        <li>Execute the day-old ground beef protocol correctly</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Animated bar graphic or image comparison</span>
+    <h3>Lesson 1 · Three Grinds, Three Fat Contents</h3>
+    <p>Customers should be able to SEE the difference between chuck, round, and sirloin in the case. That visible difference is a standard, not an accident.</p>
+    <div class="fatrow"><div class="nm"><span>Ground Chuck</span><span>80–85% lean / 15–20% fat</span></div>
+      <div class="bar"><div class="lean" style="width:82%"><span>LEAN 82%</span></div><div class="fat" style="width:18%"><span>FAT</span></div></div></div>
+    <div class="fatrow"><div class="nm"><span>Ground Round</span><span>85–90% lean / 10–15% fat</span></div>
+      <div class="bar"><div class="lean" style="width:87%"><span>LEAN 87%</span></div><div class="fat" style="width:13%"><span>FAT</span></div></div></div>
+    <div class="fatrow"><div class="nm"><span>Ground Sirloin</span><span>90–92% lean / 8–10% fat</span></div>
+      <div class="bar"><div class="lean" style="width:91%"><span>LEAN 91%</span></div><div class="fat" style="width:9%"><span>FAT</span></div></div></div>
+    <p class="smallnote">Chili grind or coarse grind available by customer request (chuck).</p>
+    <table class="eft">
+      <tr><th>Grind type</th><th>Approved source cuts (choose from)</th></tr>
+      <tr><td>Fresh Ground Chuck</td><td>Ribeye · NY Strip · Steak kabob meat · Short ribs · Briskets · Steak tips · Chuck roast · Shoulder roast · Chuck roll · Shoulder clod</td></tr>
+      <tr><td>Fresh Ground Round</td><td>Bottom round trim · Top round trim · Eye round trim · Bottom round roast · London broil · Eye of round roast · Bottom round flat · Whole top round</td></tr>
+      <tr><td>Ground Sirloin</td><td>Top sirloin · Sirloin tip steak · Tenderloin steaks · Flank steaks · Tri-tips · NY strips · Knuckles</td></tr>
+    </table>
+    <div class="stdline"><b>Standard:</b> EF ground beef is ground ONLY from primals, steaks, roasts, or trimmings — never "whatever's available."</div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Timeline interaction</span>
+    <h3>Lesson 2 · The Grind Day, Hour by Hour</h3>
+    <div class="tl">
+      <div class="ev"><div class="tm">Before anything</div><p>Review the Weekly Steak &amp; Grind Report. Split the day's expected movement into thirds — that's your batch size. Grind pans do NOT need to be filled every morning.</p></div>
+      <div class="ev"><div class="tm">Never before 8:30AM</div><p>Ground beef is the LAST item produced when filling the fresh case. Grinding early wastes peak-freshness display time.</p></div>
+      <div class="ev"><div class="tm">10:00AM</div><p>Ground beef readiness standard — case set and full.</p></div>
+      <div class="ev"><div class="tm">Through the day (min. 3x)</div><p>Grind fresh multiple times — minimum 3 grinds per day. Run out between 3–5PM? Grind another batch, and keep going as needed until 7PM. Log each batch in FRESH TRAX immediately.</p></div>
+      <div class="ev"><div class="tm">After 7:00PM</div><p>Small loaves only — no more than 5 lbs at a time. Shift pans through the evening. Use roast or stew beef for PM grinds unless trimmings are on hand.</p></div>
+      <div class="ev"><div class="tm">After 9:00PM</div><p>Clean the grinder — waiting until after 9PM allows for late grind special orders. Full nightly breakdown (covered in M3).</p></div>
+    </div>
+    <div class="stdline"><b>Standard:</b> Fill grind pans LOOSELY — a lighter pack keeps grind red longer. Do not over-grind, and never produce backup grinds.</div>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">Side-by-side: loosely packed pan (correct) vs. densely packed pan (incorrect) after 4 hours in case — the color difference sells the lesson.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Statement + checklist block</span>
+    <h3>Lesson 3 · The Non-Negotiables</h3>
+    <div class="na">
+      <div class="nacol always"><div class="head">Always</div><ul>
+        <li>Same-day grind — follow the Grind 101 SOP for ALL proteins</li>
+        <li>Correct fat content per the primal</li>
+        <li>FRESH TRAX (USDA Electronic Grind Log) entry for EVERY batch, at the time of grinding</li>
+        <li>Clean the grinder between each grind</li>
+        <li>Serve fresh grind with hamburger paddles</li>
+        <li>COOL labeling on grind signage</li>
+      </ul></div>
+      <div class="nacol never"><div class="head">Never</div><ul>
+        <li>Re-grind ground beef — EVER (any protein)</li>
+        <li>Grind before 8:30AM</li>
+        <li>Batch FRESH TRAX entries at end of day</li>
+        <li>Produce backup grinds</li>
+        <li>Push meat with hands — stuffer only (see M3)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Process block with clock graphic</span>
+    <h3>Lesson 4 · Day-Old Ground Beef Protocol</h3>
+    <div class="tl">
+      <div class="ev"><div class="tm">By 8:00AM</div><p>Day-old grind is OUT of the meat case — no exceptions. It transfers to Prepared Foods through the register using the transfer procedure.</p></div>
+      <div class="ev"><div class="tm">Pushing product to Prepared Foods?</div><p>Use the "PUSH" scan card at <b>40% cost</b>.</p></div>
+      <div class="ev"><div class="tm">Prepared Foods requests product (no leftover)?</div><p>Transfer at <b>100% cost</b>.</p></div>
+    </div>
+    <div class="stdline"><b>Remember:</b> 40% = you're moving YOUR leftover. 100% = they need FRESH product. The cost method tells the story of who initiated the transfer.</div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course M1</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass.</div>
+    <div class="q"><div class="qt">1. The Weekly Steak &amp; Grind Report says you'll sell 30 lbs of ground chuck today. Your AM production plan is:</div>
+      <button class="opt" data-r="w">Grind all 30 lbs at once so the case stays full</button>
+      <button class="opt" data-r="c">Grind 10 lbs now, and plan two more 10 lb grinds through the day</button>
+      <button class="opt" data-r="w">Grind 15 lbs and freeze 15 lbs as backup</button>
+      <div class="fb good">Correct — split daily movement into thirds and grind fresh at least 3 times a day. That's the freshness engine of the program.</div>
+      <div class="fb bad">Split the day's movement into thirds — 10/10/10 — and never produce backup grinds.</div>
+    </div>
+    <div class="q"><div class="qt">2. It's 8:15PM and the case is low on ground chuck. You should:</div>
+      <button class="opt" data-r="w">Grind a full 10 lb batch to be safe</button>
+      <button class="opt" data-r="c">Grind no more than 5 lbs, or sell down on another grind if heavy</button>
+      <div class="fb good">Right — after 7PM it's small loaves only, max 5 lbs at a time, shifting pans to avoid waste.</div>
+      <div class="fb bad">After 7PM, PM protocol kicks in: 5 lbs max at a time. A full batch this late becomes tomorrow's shrink.</div>
+    </div>
+    <div class="q"><div class="qt">3. When do you enter each batch into FRESH TRAX?</div>
+      <button class="opt" data-r="c">Immediately after grinding each batch</button>
+      <button class="opt" data-r="w">At the end of the shift, all at once</button>
+      <button class="opt" data-r="w">Only for the first grind of the day</button>
+      <div class="fb good">Correct — FRESH TRAX is the USDA Electronic Grind Log. Every batch, at the time it's produced.</div>
+      <div class="fb bad">End-of-day catch-up is a compliance failure. Every batch gets logged at the time it's ground.</div>
+    </div>
+    <div class="q"><div class="qt">4. A pan of yesterday's ground round is still fresh-looking at 7:45AM. What happens to it?</div>
+      <button class="opt" data-r="w">Run it back through the grinder to freshen the color</button>
+      <button class="opt" data-r="c">Out of the case by 8AM and transferred to Prepared Foods via register</button>
+      <div class="fb good">Correct — and re-grinding is strictly prohibited, no matter how it looks.</div>
+      <div class="fb bad">Ground beef is NEVER re-ground. Day-old grind leaves the case by 8AM via the transfer procedure.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: first supervised grind with your trainer — correct primal, fat check, loose pack, FRESH TRAX entry — verified on the Grind 101 SOP checklist (Week 4 of the Cutter track).</p></div></div>
+</div></section>
+
+<!-- ================= COURSE M2 ================= -->
+<section class="view" id="v-m2"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Meat Cutter Track · Course M2</div>
+    <h2>The Cutter's Craft: Top 4 Steaks</h2>
+    <p>Steak cutting is where the artisanal butcher earns the title. Consistent thickness, correct trim, and the discipline NOT to overcut — this is the craft customers pay for and remember.</p>
+    <div class="meta"><span>⏱ 20 minutes</span><span>👥 Meat Cutter (APTL/TL knowledge)</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>State thickness and trim specs for the Top 4 Steaks without reference materials</li>
+        <li>Identify which primals yield which retail cuts</li>
+        <li>Explain why we never pre-trim primals or overcut the case</li>
+        <li>Apply steak, roast, and pork presentation standards from the cut room side</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Image + hotspot per steak (use standards doc pg 8 photos re-shot)</span>
+    <h3>Lesson 1 · Ideal EF Steak Standards</h3>
+    <div class="steakgrid">
+      <div class="steak"><div class="sh">Filet Mignon <span class="thick">2" – 2.5"</span></div><ul>
+        <li>Chain fat removed — chain still attached</li>
+        <li>Exterior fat trimmed to no more than 1/8"</li>
+      </ul></div>
+      <div class="steak"><div class="sh">Ribeye <span class="thick">1.25" – 1.5"</span></div><ul>
+        <li>Exterior fat trimmed to 3/16"</li>
+        <li>Well-trimmed lip must remain</li>
+        <li>DO NOT remove interior fat kernels</li>
+        <li>DO NOT pre-trim the primal</li>
+      </ul></div>
+      <div class="steak"><div class="sh">Sirloin <span class="thick">1.25" – 1.5"</span></div><ul>
+        <li>Exterior fat to 3/16" where possible</li>
+        <li>No gristle in the middle of the steak</li>
+        <li>Gristle removed from the bottom</li>
+      </ul></div>
+      <div class="steak"><div class="sh">New York Strip <span class="thick">1.25" – 1.5"</span></div><ul>
+        <li>Gristle removed</li>
+        <li>Exterior fat trimmed to 3/16"</li>
+        <li>Well-trimmed lip must remain</li>
+        <li>DO NOT pre-trim the primal</li>
+      </ul></div>
+    </div>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo set needed — the money shots</span><p class="note">Re-shoot each steak on black steak paper, overhead, with green callout lines matching the 2018 standards doc style. Add one ruler-in-frame shot per steak to make thickness real. These become Articulate labeled-graphic hotspots.</p></div>
+    <div class="media video"><span class="icon">🎬</span><span class="label">Video series · 4 × 2 min · "Cutting the Top 4"</span><p class="note">One video per steak: experienced cutter narrates thickness, trim, and the common error (cutting thin to stretch yield; uneven thickness; leaving gristle; pre-trimming). Film over the shoulder + overhead angle.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Quote + statement</span>
+    <h3>Lesson 2 · The Discipline: Do Not Overcut</h3>
+    <div class="quote"><p>"Every steak you cut that doesn't sell today is tomorrow's markdown. The report tells you what to cut — trust it."</p><div class="who">Production discipline · SME workbook Tab 3</div></div>
+    <div class="stdline"><b>Standard:</b> Review the Weekly Steak &amp; Grind Report before cutting — production quantities come from data, not from how empty the cooler looks.</div>
+    <div class="stdline"><b>Standard:</b> Only steaks on Ad go on full pans; regular retail displays on half pans — so the case looks full without overcutting.</div>
+    <div class="stdline"><b>Standard:</b> All bone-in steaks get bone dust removed. Whole tenderloins merchandised in Cryovac, ready to custom-cut for customers.</div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Know your yield:</b> Track cutting-test yield on your primary primals (retail weight ÷ primal weight). Great cutters know their numbers — it's how you spot a bad trim habit or a supplier problem early.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Flip cards by species</span>
+    <h3>Lesson 3 · Quality Indicators You Must Know</h3>
+    <table class="eft">
+      <tr><th>Product</th><th>Acceptable</th><th>Pull it</th></tr>
+      <tr><td>Beef steaks</td><td>Red and moist</td><td>Brown or green marks; dry surface</td></tr>
+      <tr><td>Beef roasts</td><td>ALWAYS bright red</td><td>One day in case = convert to grinds, cube steaks, or stew</td></tr>
+      <tr><td>Fresh pork</td><td>White or pink, moist, white marbling</td><td>Gray, dry, off odor</td></tr>
+      <tr><td>Bacon &amp; sausage</td><td>Pink and white; tight casing; springs back</td><td>Gray/green/brown; sour odor; sticky, dry, or hard</td></tr>
+      <tr><td>Poultry</td><td>Pink fleshy color, no foul smell, 33–36°F</td><td>Any foul odor, gray tone, slime</td></tr>
+    </table>
+    <div class="stdline grn"><b>⊕ Added Best Practice — "Fresh eyes" walk:</b> Once per shift, walk your case like a customer who's never seen it. Dates PLUS appearance PLUS what it SHOULD look like — that combination is quality ownership.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course M2</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass. Add a matching question (steak → spec) in Articulate.</div>
+    <div class="q"><div class="qt">1. Which steak is cut 2" to 2.5" thick?</div>
+      <button class="opt" data-r="w">Ribeye</button>
+      <button class="opt" data-r="c">Filet Mignon</button>
+      <button class="opt" data-r="w">NY Strip</button>
+      <div class="fb good">Correct — filet runs 2–2.5"; the other three run 1.25–1.5".</div>
+      <div class="fb bad">Filet is the tall one: 2–2.5". Ribeye, Sirloin, and NY Strip are all 1.25–1.5".</div>
+    </div>
+    <div class="q"><div class="qt">2. While cutting ribeyes, you notice interior fat kernels. You should:</div>
+      <button class="opt" data-r="w">Trim them out for a leaner look</button>
+      <button class="opt" data-r="c">Leave them — interior fat kernels stay; only exterior fat is trimmed to 3/16"</button>
+      <div class="fb good">Correct — those kernels are flavor and are part of the spec. Never remove them.</div>
+      <div class="fb bad">Interior fat kernels are part of the ribeye spec — removing them is a trim error.</div>
+    </div>
+    <div class="q"><div class="qt">3. A beef roast has been in the case since yesterday and still looks decent. What does the standard say?</div>
+      <button class="opt" data-r="c">Convert it — after one day, roasts become fresh grinds, cube steaks, or stew beef</button>
+      <button class="opt" data-r="w">Leave it until it discolors</button>
+      <div class="fb good">Correct — one-day shelf life on roasts, then convert. Roast in case → grinds; fresh roasts from cooler → case.</div>
+      <div class="fb bad">Roasts convert after ONE day regardless of appearance — that's how the case stays bright red.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: observation phase with an experienced cutter, then guided practice — 4 consecutive steaks to spec per cut type before independent cutting (Weeks 3–5).</p></div></div>
+</div></section>
+
+<!-- ================= COURSE M3 ================= -->
+<section class="view" id="v-m3"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Meat Cutter Track · Course M3</div>
+    <h2>Equipment Mastery &amp; Safety</h2>
+    <p>The cut room's equipment is powerful, and it doesn't forgive shortcuts. This course covers the band saw, both grinders, the tenderizer, the sausage stuffer, and cutting block management — with zero-deviation safety expectations.</p>
+    <div class="meta"><span>⏱ 20 minutes</span><span>👥 Meat Cutter</span><span>⚠ Safety-Gated — zero deviations</span><span>Quiz: 100% on safety items</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>State the safety rules for the band saw, grinders, and tenderizer — including the counterintuitive ones</li>
+        <li>Perform the nightly breakdown sequence for both grinders</li>
+        <li>Explain why the red meat and poultry grinders never cross</li>
+        <li>Maintain cutting blocks: species designation, sanitizer, weekly whitener soak</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Labeled graphic + warning callouts</span>
+    <h3>Lesson 1 · Hobart Band Saw — <span class="stdno">The Glove Rule Is Backwards Here</span></h3>
+    <div class="na">
+      <div class="nacol always"><div class="head">Always</div><ul>
+        <li>All guards and covers properly fastened and tightened</li>
+        <li>Meat push plate used on EVERY cut</li>
+        <li>Cleaned thoroughly between each species</li>
+        <li>Broken down completely nightly — degreaser + J512 sanitizer</li>
+        <li>Left broken down to air dry overnight</li>
+        <li>Mineral oil on inner parts at reassembly</li>
+      </ul></div>
+      <div class="nacol never"><div class="head">Never</div><ul>
+        <li>NEVER wear a metal cutting glove while operating the saw</li>
+        <li>Never put hands near the blade — push plate only</li>
+        <li>Never skip between-species cleaning</li>
+        <li>Never reassemble wet</li>
+      </ul></div>
+    </div>
+    <div class="stdline"><b>Why no metal glove?</b> On a knife, a cut glove protects you. On a band saw, the blade can catch the metal mesh and pull your hand in. It's the opposite of knife intuition — which is exactly why we drill it.</div>
+    <div class="media video"><span class="icon">🎬</span><span class="label">Safety video · 2 min</span><p class="note">Trainer demonstrates guard check, push plate on every cut, and holds up the metal glove: "This saves your hand at the block. At the saw, it's the most dangerous thing you can wear." Freeze-frame warning card.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Comparison slider — two machines</span>
+    <h3>Lesson 2 · Two Grinders, Two Worlds</h3>
+    <table class="eft">
+      <tr><th></th><th>Red Meat Grinder (BIRO HHP)</th><th>Poultry Grinder (BIRO 346SS)</th></tr>
+      <tr><td>Grinds</td><td>Beef, bison, lamb, pork ONLY</td><td>Chicken &amp; turkey ONLY</td></tr>
+      <tr><td>Never touches</td><td><b>NO POULTRY — ever</b></td><td><b>NO RED MEAT — ever</b></td></tr>
+      <tr><td>Cleaning cadence</td><td>Between each species / each grind per FRESH TRAX</td><td>Between each grind + AM &amp; PM clean (PM clean not before 9 o'clock)</td></tr>
+      <tr><td>Feeding</td><td colspan="2" style="text-align:center">ALL meat pushed through the neck with the STUFFER — never hands</td></tr>
+      <tr><td>Nightly</td><td colspan="2" style="text-align:center">Full disassembly — Neck, Worm, Blade, Plate, Top Pan — cleaned, air-dried unassembled, mineral oil on plates &amp; knife at reassembly</td></tr>
+    </table>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">Both grinders side by side with red/yellow species placards; exploded-parts photo of the five disassembled components labeled Neck / Worm / Blade / Plate / Top Pan for a drag-to-label activity.</p></div>
+    <div class="stdline"><b>Articulate activity:</b> Drag-and-drop — learner sorts product cards (ground bison, chicken thighs, pork trim, turkey breast…) onto the correct grinder. Wrong grinder = immediate red feedback with the cross-contamination explanation.</div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Accordion</span>
+    <h3>Lesson 3 · Tenderizer, Stuffer &amp; Steamer</h3>
+    <div class="stdline"><b>Meat tenderizer:</b> Black guard in use whenever operating. Cleaned and sanitized between species with cleaning combs. Combs oiled every morning before reassembly. Always moved on a cart — never carried.</div>
+    <div class="stdline"><b>Sausage stuffer:</b> Cleaned between each species of sausage produced (spray rag, then clean and sanitize). Fully disassembled and cleaned each night.</div>
+    <div class="stdline"><b>Seafood steamer:</b> Heat-resistant mitts every time the door opens. Broken down and cleaned nightly with degreaser + J512.</div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Checklist + weekly calendar graphic</span>
+    <h3>Lesson 4 · Cutting Blocks &amp; the Cut Room</h3>
+    <div class="stdline"><b>Standard:</b> Every cutting block is designated to ONE species — no exceptions, no "quick jobs."</div>
+    <div class="stdline"><b>Standard:</b> Blocks kept clear of cross-contaminating items — black steak paper boxes never sit on a block.</div>
+    <div class="stdline"><b>Standard:</b> Sanitizer at 200–400ppm, verified with strips, buckets changed every 2 hours.</div>
+    <div class="stdline"><b>Standard:</b> Weekly block whitener soak — 15 minutes, documented.</div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Edge care:</b> Hone knives at the start of every cutting session; sharpen on a set weekly schedule. A dull knife requires more force and causes more injuries than a sharp one — and it tears product instead of cutting it. Track sharpening on the same log as the whitener soak.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course M3</h3>
+    <div class="sub">⚠ Safety items require 100% — build with "answer until correct" remediation in Articulate.</div>
+    <div class="q"><div class="qt">1. When operating the band saw, a metal cutting glove is:</div>
+      <button class="opt" data-r="w">Required — it protects your hand</button>
+      <button class="opt" data-r="c">Prohibited — the blade can catch the mesh and pull your hand in</button>
+      <div class="fb good">Correct. Cut glove at the block, NEVER at the saw. Push plate on every cut.</div>
+      <div class="fb bad">This is the counterintuitive one: the metal glove is NEVER worn at the saw. The blade can catch it.</div>
+    </div>
+    <div class="q"><div class="qt">2. You're mid-shift and need to push the last of a pork batch through the grinder neck. You use:</div>
+      <button class="opt" data-r="c">The stuffer — every time, for all meat</button>
+      <button class="opt" data-r="w">Your hand, carefully, since it's just one piece</button>
+      <div class="fb good">Correct — the feeding end has no guard. The stuffer is the guard. No exceptions.</div>
+      <div class="fb bad">Hands never enter the neck — the grinder has no guard on the feeding end. Stuffer, always.</div>
+    </div>
+    <div class="q"><div class="qt">3. Ground turkey needs to be produced and the poultry grinder is being cleaned. Can you run it through the red meat grinder just this once?</div>
+      <button class="opt" data-r="w">Yes, with a thorough clean afterward</button>
+      <button class="opt" data-r="c">No — the red meat grinder NEVER grinds poultry, period</button>
+      <div class="fb good">Correct — the machines never cross. Wait for the poultry grinder.</div>
+      <div class="fb bad">Equipment separation is absolute: red meat grinder = NO poultry; poultry grinder = NO red meat. There is no "just this once."</div>
+    </div>
+    <div class="q"><div class="qt">4. The nightly grinder breakdown includes removing:</div>
+      <button class="opt" data-r="c">Neck, Worm, Blade, Plate, and Top Pan — then air dry unassembled</button>
+      <button class="opt" data-r="w">Just the blade and plate</button>
+      <div class="fb good">Correct — all five parts, cleaned, left unassembled to air dry, mineral oil on plates and knife at reassembly.</div>
+      <div class="fb bad">Full disassembly means all five: Neck, Worm, Blade, Plate, Top Pan — and it stays broken down overnight.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: equipment safety training with zero-deviation sign-off — band saw, tenderizer, both grinders — BEFORE any independent equipment operation (Cutter track Weeks 2–3).</p></div></div>
+</div></section>
+
+<!-- ================= COURSE M4 ================= -->
+<section class="view" id="v-m4"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Meat Cutter Track · Course M4</div>
+    <h2>Value Added &amp; Handmade Sausage</h2>
+    <p>Kabobs, burgers, rollers, and handmade sausage are where craft meets creativity — and where specs matter most, because these items carry the shortest shelf lives in the case.</p>
+    <div class="meta"><span>⏱ 15 minutes</span><span>👥 Meat Cutter · APTL · TL</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Build kabobs to spec: cut selection, cube size, and ingredient order</li>
+        <li>Apply shelf-life rules for burgers, rollers, and breaded items</li>
+        <li>Produce handmade sausage links to the EF specification</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Build-a-kabob drag interaction</span>
+    <h3>Lesson 1 · The Kabob Standard</h3>
+    <div class="stdline"><b>Cube size:</b> 1.5" – 2" cubes of meat.</div>
+    <div class="stdline"><b>Ingredient order:</b> Meat → Yellow Squash → Red Pepper → Meat → Zucchini → Red Onion.</div>
+    <div class="stdline"><b>Steak only:</b> Beef kabobs are made from STEAK pieces only — sirloin, strip, ribeye, or filet. NEVER from other cuts.</div>
+    <div class="stdline"><b>Marinades:</b> Refreshed throughout the day to keep fresh appeal.</div>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">One perfect kabob shot overhead on butcher block with each ingredient labeled in order — this becomes the drag-and-drop answer key.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Flashcards — shelf life drill</span>
+    <h3>Lesson 2 · Shelf Life Rules That Can't Slip</h3>
+    <table class="eft">
+      <tr><th>Item</th><th>Rule</th></tr>
+      <tr><td>Fresh-made burgers</td><td>ONE day — sold only on the day they're made</td></tr>
+      <tr><td>Chicken rollers</td><td>Stuffed, min 1.5" diameter of ingredients facing out; merchandised 1 high; re-breaded and refaced each morning for Day 2</td></tr>
+      <tr><td>Breaded cutlets</td><td>Re-breaded on their second day in the case</td></tr>
+      <tr><td>Sausage trimmings</td><td>Two-day shelf life in the cooler</td></tr>
+      <tr><td>Value added case</td><td>Dividers between species; ripe with color breaks and freshly made product</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Video + spec card</span>
+    <h3>Lesson 3 · Handmade Sausage — Our Signature</h3>
+    <div class="two">
+      <div>
+        <div class="stdline"><b>Spec:</b> Links 6" long, approximately 0.33 lb each.</div>
+        <div class="stdline"><b>Presentation:</b> Bend toward the front of the case — "smiling at the customer."</div>
+        <div class="stdline"><b>Sourcing:</b> ALL pork trimmings are retained for the handmade sausage program — never discarded.</div>
+        <div class="stdline"><b>Quality:</b> Pink and white in color; tight casing; springs back to the touch.</div>
+      </div>
+      <div>
+        <div class="media video"><span class="icon">🎬</span><span class="label">Video · 2.5 min · "Link by Hand"</span><p class="note">The most shareable video in the program: stuffing, linking, and the 6" twist, ending with links smiling in the case. Doubles as recruiting/brand content.</p></div>
+      </div>
+    </div>
+    <div class="quote"><p>"Nothing says butcher shop like sausage made by hand, in this store, this morning."</p><div class="who">Course closing quote</div></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course M4</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass.</div>
+    <div class="q"><div class="qt">1. Which cut can go into a beef kabob?</div>
+      <button class="opt" data-r="w">Chuck roast cubes</button>
+      <button class="opt" data-r="c">Sirloin</button>
+      <button class="opt" data-r="w">Bottom round</button>
+      <div class="fb good">Correct — steak pieces only: sirloin, strip, ribeye, or filet.</div>
+      <div class="fb bad">Beef kabobs come from STEAK cuts only — sirloin, strip, ribeye, filet. Never other cuts.</div>
+    </div>
+    <div class="q"><div class="qt">2. Fresh-made burgers from yesterday are still in the cooler. They can be:</div>
+      <button class="opt" data-r="w">Sold today if they look fresh</button>
+      <button class="opt" data-r="c">Not sold — burgers have a ONE-day shelf life and sell only on the day made</button>
+      <div class="fb good">Correct — one day, no exceptions. Stage to KWYT.</div>
+      <div class="fb bad">Burgers are a one-day item — sold only on the day they're made.</div>
+    </div>
+    <div class="q"><div class="qt">3. A handmade sausage link should measure:</div>
+      <button class="opt" data-r="c">6" long, about 0.33 lb, bend facing the customer</button>
+      <button class="opt" data-r="w">8" long, about 0.5 lb</button>
+      <div class="fb good">Correct — 6", ~0.33 lb, smiling at the customer.</div>
+      <div class="fb bad">The spec is 6" and roughly a third of a pound, presented with the bend toward the front of the case.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: full value-added production session — kabobs, burgers, rollers, sausage — observed against spec with photo comparison (Cutter track Week 5).</p></div></div>
+</div></section>
+
+<!-- ================= COURSE S1 ================= -->
+<section class="view" id="v-s1"><div class="wrap">
+  <div class="coursehead sea">
+    <div class="cnum">Seafood Track · Course S1</div>
+    <h2>Seafood Excellence I: The Case &amp; Fresh Fish</h2>
+    <p>A great seafood case is set in a specific order for a specific reason: ready-to-eat food is protected from raw product at every step. Learn the sequence, then learn to judge fish like a fishmonger.</p>
+    <div class="meta"><span>⏱ 18 minutes</span><span>👥 Seafood Lead · APTL · TL</span><span>⚠ Safety-Gated sequence</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Set up the seafood case in the correct sequence with full sanitation between sections</li>
+        <li>Classify fish as acceptable or unacceptable using smell, texture, and color</li>
+        <li>Apply fresh fish display standards, including braided tilapia and patty paper for bloodline fish</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Process flow — animate left to right</span>
+    <h3>Lesson 1 · The Set-Up Sequence Is a Food Safety Control</h3>
+    <div class="flow">
+      <div class="fstep"><div class="n">1</div><div class="t">Cooked Section</div><div class="d">Ready-to-eat set FIRST. Thawed, in shelf life, freshest to front.</div></div>
+      <div class="fstep sanitize"><div class="n">✚</div><div class="t">Sanitize</div><div class="d">ALL working areas and tools cleaned AND sanitized — not just rinsed.</div></div>
+      <div class="fstep"><div class="n">2</div><div class="t">Fresh Fish</div><div class="d">Black steak paper in every pan. Freshest to front. Max 2 layers.</div></div>
+      <div class="fstep"><div class="n">3</div><div class="t">Shellfish</div><div class="d">Set LAST. Divider between fish and shellfish. Own pan or bowl each.</div></div>
+    </div>
+    <div class="stdline sea"><b>Why this order?</b> Ready-to-eat food can never be at risk from raw product. Working cooked-first means raw juices never touch a surface that RTE food will touch. Skipping the sanitize step between sections is the single biggest food safety risk in seafood — and it also protects customers with shellfish allergies from cross-contact.</div>
+    <div class="media video"><span class="icon">🎬</span><span class="label">Video · 3 min · "Opening the Seafood Case"</span><p class="note">Real-time opening with the Seafood Lead narrating each phase and pausing on the sanitize step: "This is the step nobody sees and everybody depends on."</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: 3-panel interactive — Smell / Texture / Color</span>
+    <h3>Lesson 2 · Three Ways to Spot Bad Seafood</h3>
+    <div class="two">
+      <div>
+        <div class="stdline sea"><b>1 · Smell:</b> Fresh fish must not have a strong odor. Know your species baselines — cod and grouper have a distinct smell even when perfectly fresh.</div>
+        <div class="stdline sea"><b>2 · Texture:</b> Flesh must be firm and intact. Soft, mushy, or broken fillets are signs of age.</div>
+        <div class="stdline sea"><b>3 · Color:</b> Fish changes color as it ages — yellowing edges and darkening bloodlines mean the product has begun to turn.</div>
+      </div>
+      <div>
+        <div class="media"><span class="icon">📷</span><span class="label">Photo pairs needed (critical asset)</span><p class="note">For salmon, tuna, and a white fish: fresh vs. turning, side by side — highlight the yellowing edge and darkened bloodline. The SME workbook specifically calls for an acceptable/unacceptable photo guide.</p></div>
+      </div>
+    </div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Receiving is the first quality check:</b> Judge fish at the back door, not just in the case. Check temperature on arrival, ice coverage, and run the smell/texture/color test on delivery. Reject and document substandard product rather than accepting it and managing shrink later.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Labeled case photo</span>
+    <h3>Lesson 3 · Fresh Fish Display Standards</h3>
+    <div class="na">
+      <div class="nacol always"><div class="head">Always</div><ul>
+        <li>Black steak paper lining every pan</li>
+        <li>Freshest product to the FRONT; oldest pulled to the rear when restocking</li>
+        <li>Max 2 layers — protects flesh, temperature, and water weight</li>
+        <li>Tilapia in the braided design</li>
+        <li>Patty paper between portions of sensitive bloodline fish (tuna, sword)</li>
+        <li>Whole loins merchandised as loins with 2–3 steaks cut in front</li>
+        <li>Bright case with color breaks; more space to what's on ad</li>
+      </ul></div>
+      <div class="nacol never"><div class="head">Never</div><ul>
+        <li>Three or more layers</li>
+        <li>Newest product in front</li>
+        <li>Bloodline fish stacked without patty paper</li>
+        <li>A case without variety or color breaks</li>
+      </ul></div>
+    </div>
+    <div class="quote"><p>"The braided tilapia isn't decoration — it's a signal that a fishmonger set this case by hand."</p><div class="who">Seafood craft moment · use with braid photo</div></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course S1</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass.</div>
+    <div class="q"><div class="qt">1. What's the correct seafood set-up order?</div>
+      <button class="opt" data-r="w">Fresh fish → shellfish → cooked</button>
+      <button class="opt" data-r="c">Cooked → sanitize everything → fresh fish → shellfish</button>
+      <button class="opt" data-r="w">Whatever section is largest first</button>
+      <div class="fb good">Correct — and the sanitize step between cooked and raw is mandatory, not optional.</div>
+      <div class="fb bad">Cooked (RTE) always comes first, then a full sanitation of all work areas, then fresh fish, then shellfish last.</div>
+    </div>
+    <div class="q"><div class="qt">2. A cod fillet has a noticeable smell. Your first move is:</div>
+      <button class="opt" data-r="w">Pull it immediately — any smell means it's bad</button>
+      <button class="opt" data-r="c">Apply species knowledge — cod has a distinct smell even when fresh; check texture and color too</button>
+      <div class="fb good">Correct — species baseline matters. Judge with all three indicators: smell, texture, AND color.</div>
+      <div class="fb bad">Cod and grouper smell distinct even when fresh. That's why we judge with all three indicators together.</div>
+    </div>
+    <div class="q"><div class="qt">3. Tuna steaks are displayed:</div>
+      <button class="opt" data-r="c">With patty paper between each portion to prevent discoloration</button>
+      <button class="opt" data-r="w">Stacked directly, three layers high to look abundant</button>
+      <div class="fb good">Correct — sensitive bloodline fish get patty paper, and no fish exceeds two layers.</div>
+      <div class="fb bad">Tuna and sword are sensitive bloodline fish — patty paper between portions, max two layers.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: observed case set-up in correct sequence with sanitization, plus a 5-fish quality classification scenario (5/5 to pass) in Week 2 of the Seafood track.</p></div></div>
+</div></section>
+
+<!-- ================= COURSE S2 ================= -->
+<section class="view" id="v-s2"><div class="wrap">
+  <div class="coursehead sea">
+    <div class="cnum">Seafood Track · Course S2</div>
+    <h2>Seafood Excellence II: Shellfish &amp; Compliance</h2>
+    <p>Shellfish carries our highest regulatory stakes: dig tags trace product in the event of illness, and the health department expects 100% compliance. This course also covers icing, the cooked section, and grab &amp; go shelf life.</p>
+    <div class="meta"><span>⏱ 15 minutes</span><span>👥 Seafood Lead · APTL · TL</span><span>⚠ Regulatory — 100% on compliance items</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Manage shellfish dig tags through the full 90-day compliance lifecycle</li>
+        <li>Set and maintain the shellfish section: bluffing, poly bags, drain holes, re-icing</li>
+        <li>Apply cooked seafood and grab &amp; go shelf life standards</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Timeline interaction — the life of a dig tag</span>
+    <h3>Lesson 1 · Dig Tags: The Life of a Tag</h3>
+    <div class="tl blue">
+      <div class="ev"><div class="tm">Delivery arrives</div><p>Verify EVERY container of live shellfish has a dig tag attached. Missing tag? Flag to your Team Leader immediately — before accepting.</p></div>
+      <div class="ev"><div class="tm">While product sells</div><p>The tag stays ON the container until every shellfish from that container is sold or discarded. Never remove it because it "looks messy."</p></div>
+      <div class="ev"><div class="tm">Last one sold</div><p>Write the date (month/day/year) on the tag in permanent marker — the LAST-SOLD date, not the received date. This starts the retention clock.</p></div>
+      <div class="ev"><div class="tm">File it</div><p>Chronological order in the designated binder. Inspectors read disorganization as noncompliance.</p></div>
+      <div class="ev"><div class="tm">90 days minimum</div><p>Tags retained at least 90 days from last-sold date and immediately retrievable for any health inspection.</p></div>
+    </div>
+    <div class="stdline sea"><b>Why it matters:</b> Dig tags exist to trace shellfish in the event of a foodborne illness outbreak. This is the one process where "most of the time" equals failure — we are 100% compliant, every tag, every day.</div>
+    <div class="stdline sea"><b>Partner requirement:</b> The raw shellfish consumer advisory sign is posted and visible in the department at ALL times. If it comes down for cleaning, it goes right back up.</div>
+    <div class="media"><span class="icon">📷</span><span class="label">Photo needed</span><p class="note">A properly dated dig tag close-up; the chronological binder open; the advisory sign in position. Three shots, three hotspots.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Before/after image slider</span>
+    <h3>Lesson 2 · Bluffing: Icing Like a Fishmonger</h3>
+    <div class="na">
+      <div class="nacol always"><div class="head">Always</div><ul>
+        <li>Shellfish completely thawed before display</li>
+        <li>Bowls "bluffed" up with ice — full and overflowing look</li>
+        <li>Scallops and P&amp;D shrimp in a clear poly bag — never touching ice</li>
+        <li>Drain holes in every bowl's corners</li>
+        <li>Mussels iced through the day to stay moist and closed</li>
+        <li>Re-ice throughout the day; drain excess water</li>
+      </ul></div>
+      <div class="nacol never"><div class="head">Never</div><ul>
+        <li>Flat, depleted-looking ice</li>
+        <li>Scallops or P&amp;D shrimp in direct ice contact</li>
+        <li>Product sitting in standing water</li>
+        <li>Ice-once-in-the-morning-and-walk-away</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Flashcards</span>
+    <h3>Lesson 3 · Cooked Section &amp; Grab-and-Go Rules</h3>
+    <table class="eft blue">
+      <tr><th>Item</th><th>Standard</th></tr>
+      <tr><td>Cooked shrimp</td><td>White / pinkish-red ONLY — never yellow or freezer-burnt; rotated from freezer to case</td></tr>
+      <tr><td>Crab cakes</td><td>New bakery muffin cup EVERY day; never stacked or 2 high</td></tr>
+      <tr><td>Coconut shrimp</td><td>Standing, tails up</td></tr>
+      <tr><td>Smoked salmon side</td><td>Full whenever possible; combined sides matched top to bottom</td></tr>
+      <tr><td>Imitation krab</td><td>45-day shelf life from thaw (day of pull = Day 1); thaw ≤ 1 week's movement</td></tr>
+      <tr><td>Prev. frozen smoked salmon</td><td>21-day shelf life from thaw (day of pull = Day 1)</td></tr>
+      <tr><td>Steamed shrimp</td><td>Cooled to ≤40°F before it enters the Grab &amp; Go</td></tr>
+    </table>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Thaw to sell, not to stock:</b> Pulling whole cases of frozen G&amp;G "to get ahead" is a leading shrink driver. Thaw only against real weekly movement — the date gun starts the clock the moment product leaves the freezer.<span class="newbp">⊕ Added</span></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course S2</h3>
+    <div class="sub">Compliance items require 100% — answer-until-correct in Articulate.</div>
+    <div class="q"><div class="qt">1. What date gets written on a dig tag, and when?</div>
+      <button class="opt" data-r="w">The delivery date, when the shipment arrives</button>
+      <button class="opt" data-r="c">The last-sold date, when the final shellfish from that container is sold or discarded</button>
+      <div class="fb good">Correct — the last-sold date starts the 90-day retention clock.</div>
+      <div class="fb bad">The most common error: it's the LAST-SOLD date, written when the container empties — not the received date.</div>
+    </div>
+    <div class="q"><div class="qt">2. How long are dig tags retained?</div>
+      <button class="opt" data-r="w">30 days</button>
+      <button class="opt" data-r="c">Minimum 90 days, filed chronologically, retrievable on demand</button>
+      <div class="fb good">Correct — 90 days minimum, in order, ready for any inspector.</div>
+      <div class="fb bad">90 days is the legal minimum — and they must be immediately retrievable for inspection.</div>
+    </div>
+    <div class="q"><div class="qt">3. Sea scallops go into the display:</div>
+      <button class="opt" data-r="c">In a clear poly bag, protected from direct ice contact</button>
+      <button class="opt" data-r="w">Directly on bluffed ice for the freshest look</button>
+      <div class="fb good">Correct — scallops and P&amp;D shrimp are damaged by direct ice contact.</div>
+      <div class="fb bad">Scallops and P&amp;D shrimp never touch ice directly — poly bag, always.</div>
+    </div>
+    <div class="q"><div class="qt">4. Imitation krab pulled from the freezer today is dated:</div>
+      <button class="opt" data-r="c">45 days out — day of pull counts as Day 1</button>
+      <button class="opt" data-r="w">21 days out</button>
+      <div class="fb good">Correct — 45 days for imitation krab; 21 days is the smoked salmon rule.</div>
+      <div class="fb bad">45 days from thaw for imitation krab (21 days is previously frozen smoked salmon). Day of pull = Day 1.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → OJT link</h3><p>Next on the floor: full dig tag process audit (100% on current tags), shellfish section set-up observation, and G&amp;G date audit in Weeks 2–3 of the Seafood track.</p></div></div>
+</div></section>
+
+<!-- ================= COURSE L1 ================= -->
+<section class="view" id="v-l1"><div class="wrap">
+  <div class="coursehead">
+    <div class="cnum">Leadership Track · Course L1</div>
+    <h2>Production Discipline: Reports, Shrink &amp; KWYT</h2>
+    <p>Leaders own the numbers. This course covers the Weekly Steak &amp; Grind Report, Know What You Throw, the 10AM readiness standard, and the case layout process — the operating rhythm of a profitable department.</p>
+    <div class="meta"><span>⏱ 15 minutes</span><span>👥 Assistant Team Leaders · Team Leaders</span><span>Quiz: 80% to pass</span></div>
+    <div class="objectives">
+      <h4>By the end of this course, you will be able to:</h4>
+      <ul>
+        <li>Read the Weekly Steak &amp; Grind Report and translate it into daily production quantities</li>
+        <li>Run the KWYT program: staging, 2PM scan-out, and MOD review</li>
+        <li>Manage the case layout process and its three approved exceptions</li>
+        <li>Lead the shift handoff so the next team walks in with context</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Worked example with real report screenshot</span>
+    <h3>Lesson 1 · The Report Runs the Day</h3>
+    <p>The Weekly Steak &amp; Grind Report shows 4-week average movement by day. Use the worked example straight from the standards guide:</p>
+    <div class="stdline"><b>Example — Store #100, Monday:</b> The report shows ~30 lbs of ground chuck moving. Protocol: grind 10 lbs, three times through the day. Run out between 3–5PM? Grind another 10 lbs, and continue as needed until 7PM. After 7PM: 5 lbs max at a time, or sell down on another grind if heavy.</div>
+    <div class="stdline"><b>Leadership behavior:</b> No production starts before the report is reviewed — and PM production is actively adjusted, not left on autopilot.</div>
+    <div class="media"><span class="icon">📷</span><span class="label">Asset needed</span><p class="note">Current Weekly Steak &amp; Grind Report screenshot (updated format) with the Monday chuck column highlighted. Note: SME flagged that Grind 101 and the report format need a refresh — confirm current versions before publishing.</p></div>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Process block + 2-shelf graphic</span>
+    <h3>Lesson 2 · Know What You Throw (KWYT)</h3>
+    <div class="tl grn">
+      <div class="ev"><div class="tm">All day</div><p>All shrink goes to the designated KWYT area — marked with bright tape. Nothing is ever discarded directly.</p></div>
+      <div class="ev"><div class="tm">2-shelf rotation</div><p>Two shelves stage items for repurposing. After 2 days, anything remaining is thrown out — nothing sits indefinitely.</p></div>
+      <div class="ev"><div class="tm">2:00PM daily</div><p>Shrink scanned out.</p></div>
+      <div class="ev"><div class="tm">2PM trash call</div><p>MOD reviews the shrink as it's scanned — full transparency before disposal.</p></div>
+    </div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — Markdown before it's lost:</b> Pair KWYT with a proactive markdown strategy. Review shrink trends weekly by item; a pattern in the KWYT bin is a production-planning problem wearing a disguise.<span class="newbp">⊕ Added</span></div>
+    <p class="smallnote">SME open question: confirm KWYT is still the current program name/process before publishing this lesson.</p>
+  </div>
+
+  <div class="block">
+    <span class="artic">Articulate: Checklist + scenario</span>
+    <h3>Lesson 3 · Layout, Readiness &amp; the Handoff</h3>
+    <div class="stdline"><b>10AM readiness:</b> Steaks, ground beef, roasts, pork, poultry, bacon &amp; sausage, value added, and seafood — ALL set by 10AM, every day.</div>
+    <div class="stdline"><b>Case layout:</b> Store-specific layout followed EVERY day, updated weekly via the Wednesday Walk. Only three approved exceptions: out of stocks, ad changes, and shrink adjustments agreed between DOs, Store Team Leaders, and the HO Merchant Team.</div>
+    <div class="stdline grn"><b>⊕ Added Best Practice — The 5-point handoff:</b> Every shift change covers: (1) production completed, (2) shrink status, (3) case needs, (4) open issues, (5) next-shift priorities. Two minutes of handoff prevents two hours of rework.<span class="newbp">⊕ Added</span></div>
+    <div class="quote"><p>"The department you run when nobody's watching is the department you actually run."</p><div class="who">Team food safety culture · SME workbook Tab 2</div></div>
+  </div>
+
+  <div class="quiz">
+    <h3>Knowledge Check · Course L1</h3>
+    <div class="sub">Build as a graded Quiz block — 80% pass.</div>
+    <div class="q"><div class="qt">1. The report shows 24 lbs of ground chuck moving on Tuesdays. Your AM plan is:</div>
+      <button class="opt" data-r="c">Three 8 lb grinds spaced through the day</button>
+      <button class="opt" data-r="w">One 24 lb grind at opening</button>
+      <div class="fb good">Correct — split daily movement into thirds; grind fresh through the day.</div>
+      <div class="fb bad">Daily movement splits into thirds: 8/8/8, ground fresh as the day progresses.</div>
+    </div>
+    <div class="q"><div class="qt">2. A clerk wants to toss short-dated pork chops straight into the trash to save time. You coach:</div>
+      <button class="opt" data-r="c">All shrink stages in the marked KWYT area and is scanned out at the 2PM trash call with MOD review</button>
+      <button class="opt" data-r="w">That's fine as long as they remember the quantity</button>
+      <div class="fb good">Correct — nothing is disposed of without staging, scanning, and MOD review. That's the transparency the program exists for.</div>
+      <div class="fb bad">Direct disposal breaks the program — staged, scanned at 2PM, reviewed by MOD, every time.</div>
+    </div>
+    <div class="q"><div class="qt">3. Which is an APPROVED reason to deviate from the weekly case layout?</div>
+      <button class="opt" data-r="w">The cutter prefers a different arrangement</button>
+      <button class="opt" data-r="c">An out-of-stock item</button>
+      <button class="opt" data-r="w">The case "looks better" another way</button>
+      <div class="fb good">Correct — out of stocks, ad changes, and approved shrink adjustments are the only three exceptions.</div>
+      <div class="fb bad">Only three exceptions exist: out of stocks, ad changes, and shrink adjustments with DO / Store Team Leader / HO Merchant approval.</div>
+    </div>
+  </div>
+
+  <div class="donecard"><div class="ck">✓</div><div><h3>Course complete → Capstone</h3><p>Leadership candidates complete all track courses plus the Artisanal Butcher Certification: cutting exam, sanitation audit, and customer interaction exercise, verified on the Tab 8 Observation Checklist.</p></div></div>
+</div></section>
+
+<!-- ================= BUILD NOTES ================= -->
+<section class="view" id="v-build"><div class="wrap">
+  <h2 class="sechead">Articulate Build Notes &amp; Asset List</h2>
+  <div class="rule"></div>
+
+  <div class="block">
+    <h3>How to replicate this in Articulate Rise</h3>
+    <table class="eft">
+      <tr><th>Mockup element</th><th>Rise block to use</th></tr>
+      <tr><td>Course header + objectives</td><td>Text → Statement + List block; add duration/audience as a Note block</td></tr>
+      <tr><td>Red "Standard:" callout lines</td><td>Text → Note block (customize accent to EF Red #C8102E)</td></tr>
+      <tr><td>Always / Never columns</td><td>List → Checkbox list (two columns) or Comparison table</td></tr>
+      <tr><td>Speed rack, sequence flow, timelines</td><td>Interactive → Labeled Graphic, Process, or Timeline block</td></tr>
+      <tr><td>Fat content bars, steak spec cards</td><td>Image blocks (export these graphics as PNGs) + Flashcard Grid for drills</td></tr>
+      <tr><td>Photo/video placeholders</td><td>Image + Video blocks — shot notes are written inside each placeholder</td></tr>
+      <tr><td>Sorting &amp; drag activities</td><td>Interactive → Sorting Activity / Matching (Storyline block for build-a-kabob)</td></tr>
+      <tr><td>Knowledge checks &amp; final quiz</td><td>Knowledge Check blocks inline; Quiz lesson at end, 80% pass (100% / answer-until-correct on ⚠ safety and compliance items)</td></tr>
+      <tr><td>Quotes</td><td>Quote block, EF Beige background, Barlow Condensed styling</td></tr>
+      <tr><td>Course → OJT green banners</td><td>Statement block + button linking to the OJT checklist PDF</td></tr>
+    </table>
+    <p>Rise theme settings: accent color <b>#C8102E</b>, headings <b>Barlow Condensed</b> (or Montserrat if unavailable), body <b>Barlow</b>. Seafood courses may use <b>#005EB8</b> accents per the department color rule (kept minimal).</p>
+  </div>
+
+  <div class="block">
+    <h3>Production asset shot list (one photo/video day per store area)</h3>
+    <table class="eft">
+      <tr><th>Priority</th><th>Asset</th><th>Used in</th></tr>
+      <tr><td>1</td><td>Fresh vs. turning fish photo pairs (salmon, tuna, white fish)</td><td>S1 — SME's top-requested asset</td></tr>
+      <tr><td>2</td><td>Top 4 steak spec photos with callout lines + ruler shots</td><td>M2</td></tr>
+      <tr><td>3</td><td>"The EF Wrap" overhead video (90 sec)</td><td>F2</td></tr>
+      <tr><td>4</td><td>Correct speed racks (meat + seafood) in cooler</td><td>F1</td></tr>
+      <tr><td>5</td><td>Grinder exploded-parts labeled photo; both grinders side by side</td><td>M3</td></tr>
+      <tr><td>6</td><td>Loose vs. dense grind pan color comparison</td><td>M1</td></tr>
+      <tr><td>7</td><td>Seafood case opening video (3 min) + braided tilapia</td><td>S1</td></tr>
+      <tr><td>8</td><td>Dig tag close-up, binder, advisory sign</td><td>S2</td></tr>
+      <tr><td>9</td><td>"Link by Hand" sausage video (2.5 min)</td><td>M4 — doubles as brand content</td></tr>
+      <tr><td>10</td><td>Case Ready / Not Ready photo set (8–12 shots incl. deliberate misses)</td><td>F2 sorting activity</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3>Best-practice additions in this program <span class="newbp">⊕ Summary</span></h3>
+    <p>These go beyond the 2018 standards and the workbook, drawn from how leading grocery butcher and seafood apprenticeship programs train (structured progression, cutting exams, sanitation audits, and customer service assessment):</p>
+    <table class="eft">
+      <tr><th>Addition</th><th>Where</th><th>Rationale</th></tr>
+      <tr><td>Handwashing before gloving</td><td>F1</td><td>Gloves aren't a substitute for clean hands</td></tr>
+      <tr><td>Weekly thermometer calibration (ice-point)</td><td>F1</td><td>Temperature standards depend on accurate tools</td></tr>
+      <tr><td>Danger zone (41–135°F) "the why"</td><td>F1</td><td>Understanding beats memorization</td></tr>
+      <tr><td>"Look twice" date rule + first/last hour case walks</td><td>F2</td><td>Cheap habits that prevent shrink and drift</td></tr>
+      <tr><td>Cutting-test yield awareness</td><td>M2</td><td>Professional cutters know their numbers</td></tr>
+      <tr><td>Knife honing/sharpening schedule on the sanitation log</td><td>M3</td><td>Dull knives cause more injuries and torn product</td></tr>
+      <tr><td>Receiving inspection &amp; rejection for seafood</td><td>S1</td><td>Quality control starts at the back door</td></tr>
+      <tr><td>Thaw-to-movement discipline for G&amp;G</td><td>S2</td><td>Directly targets a shrink driver the SME flagged</td></tr>
+      <tr><td>Proactive markdown + 5-point shift handoff</td><td>L1</td><td>Turns shrink data into action; protects continuity</td></tr>
+      <tr><td>3-part certification capstone (cut exam, sanitation audit, customer exercise)</td><td>Program</td><td>Gives "Artisanal Butcher" real credential weight — modeled on industry apprenticeships</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3>Open items from the SME workbook to resolve before publishing</h3>
+    <ul style="margin-left:20px">
+      <li style="margin-bottom:6px"><b>Grind 101 SOP</b> is from 2016 and flagged "needs update" — refresh before M1 goes live.</li>
+      <li style="margin-bottom:6px"><b>KWYT program</b> — SME asked "is this still a program we follow?" Confirm current state.</li>
+      <li style="margin-bottom:6px"><b>Weekly Steak &amp; Grind Report</b> — confirm current format and whether P-Touch signage is still current ("No P touch?" note in Tab 3).</li>
+      <li style="margin-bottom:6px"><b>Poultry grinder PM clean time</b> — workbook says "not before 8PM" in one place and "9PM" in others; standards doc says 9 o'clock. Courses use 9PM — confirm.</li>
+      <li><b>Temperature logs</b> — SME noted "Logs?" — decide whether a temp log job aid ships with F1.</li>
+    </ul>
+  </div>
+</div></section>
+
+<footer><div class="fin">
+  <div class="bn">Earth Fare · Artisanal Butcher Program</div>
+  <div class="tg">Healthy Food for Everyone · Learning &amp; Development · Internal Use Only</div>
+</div></footer>
+
+<script>
+// nav switching
+document.querySelectorAll('.navbtn').forEach(function(b){
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.navbtn').forEach(function(x){x.classList.remove('active')});
+    b.classList.add('active');
+    document.querySelectorAll('.view').forEach(function(v){v.classList.remove('active')});
+    document.getElementById('v-'+b.dataset.v).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+// quiz behavior
+document.querySelectorAll('.q').forEach(function(q){
+  var opts=q.querySelectorAll('.opt');
+  var good=q.querySelector('.fb.good'), bad=q.querySelector('.fb.bad');
+  opts.forEach(function(o){
+    o.addEventListener('click',function(){
+      opts.forEach(function(x){x.classList.remove('correct','wrong')});
+      good.classList.remove('show'); bad.classList.remove('show');
+      if(o.dataset.r==='c'){o.classList.add('correct');good.classList.add('show');}
+      else{o.classList.add('wrong');bad.classList.add('show');
+        opts.forEach(function(x){if(x.dataset.r==='c')x.classList.add('correct')});}
+    });
+  });
+});
+</script>
+</body>
+</html>
